@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "The Hunger Games",
+    "author": "Suzanne Collins",
+    "description": "The Hunger Games follows Katniss Everdeen as she is forced to fight in a yearly gladiatorial contest. Katniss's struggle and ultimate survival, along with Peeta Mellark's, sparks a revolution to overthrow the tyrannical Capitol."
+  },
+  {
+    "id": 2,
+    "title": "Catching Fire",
+    "author": "Suzanne Collins",
+    "description": "Despite leaving the arena, Katniss and her loved ones are in more danger than ever as the threat of punishment looms. In Catching Fire, Collings explores the effects of trauma and classism and how fascism oppresses society. The novel also investigates how strong emotions like guilt, fear, and anger can spark rebellion."
+  },
+  {
+    "id": 3,
+    "title": "Mockingjay",
+    "author": "Suzanne Collins",
+    "description": "Mockingjay focuses on the civil war between the 13 districts of Panem and the oppressive government of the Capitol. Through Katniss's experiences in the war, Collins explores cycles of oppression, the meaning of love in wartime, and the power of propaganda."
+  },
+  {
+    "id": 4,
+    "title": "The Lord of the Rings",
+    "author": "John Ronald Reuel Tolkien",
+    "description": "A hobbit named Frodo inherits the One Ring, which can destroy the entire world. With the recently reawakened evil, being Sauron, going after the Ring to cement his reign, Frodo joins with eight others to destroy the Ring and defeat Sauron."
+  },
+  {
+    "id": 5,
+    "title": "The Hobbit",
+    "author": "John Ronald Reuel Tolkien",
+    "description": "The Hobbit is set in Middle-earth and follows home-loving Bilbo Baggins, the hobbit of the title, who joins the wizard Gandalf and the thirteen dwarves of Thorin's Company, on a quest to reclaim the dwarves' home and treasure from the dragon Smaug."
+  },
+  {
+    "id": 6,
+    "title": "Harry Potter and the Philosopher's Stone",
+    "author": "J. K. Rowling",
+    "description": "The book is about 11 year old Harry Potter, who receives a letter saying that he is invited to attend Hogwarts, school of witchcraft and wizardry. He then learns that a powerful wizard and his minions are after the sorcerer's stone that will make this evil wizard immortal and undefeatable."
+  },
+  {
+    "id": 7,
+    "title": "Harry Potter and the Chamber of Secrets",
+    "author": "J. K. Rowling",
+    "description": "The plot follows Harry's second year at Hogwarts School of Witchcraft and Wizardry, during which a series of messages on the walls of the school's corridors warn that the 'Chamber of Secrets' has been opened and that the 'heir of Slytherin' would kill all pupils who do not come from all-magical families."
+  }
+]

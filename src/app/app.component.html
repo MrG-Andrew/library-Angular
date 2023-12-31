@@ -1,6 +1,17 @@
 <div class="container">
-  <search-bar></search-bar>
-  <add-new-book></add-new-book>
-  <book-list *ngIf="books" [books]="books"></book-list>
-  <book-modal></book-modal>
+  <div class="d-flex justify-content-between mt-5 mb-3">
+    <div class=" w-75">
+      <search-bar
+        [(search)]="search"
+      ></search-bar>
+    </div>
+    <div class="d-flex flex-row-reverse">
+      <add-new-book
+        (addBook)="books.push($event)"
+      ></add-new-book>
+    </div>
+  </div>
+  <div class="book-list-container">
+    <book-list *ngIf="books" [books]="filteredBooks()"></book-list>
+  </div>
 </div>

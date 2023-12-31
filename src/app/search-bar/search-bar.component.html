@@ -1,1 +1,20 @@
-<p>search-bar works!</p>
+<form>
+  <div class="input-group mb-3 custom-search-bar">
+    <input 
+      name="search"
+      type="text" 
+      class="form-control input-no-border" 
+      placeholder="Search..." 
+      aria-label="Search..." 
+      aria-describedby="basic-addon2"
+      [(ngModel)]="searchValue"
+      (ngModelChange)="onSearchChange($event)"
+    />
+    <div class="input-group-append bg-white borderEdit" *ngIf="searchValue">
+      <button class="btn btn-close shadow-none" type="button" (click)="clearSearch()"></button>
+    </div>
+    <div class="input-group-append bg-white border-radius">
+      <i class="p-0 m-0"><img src="../../assets/search.png" height="24px" width="24px"/></i>
+    </div>
+  </div>
+</form>

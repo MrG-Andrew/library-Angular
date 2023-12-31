@@ -1,0 +1,14 @@
+.custom-search-bar{
+    border: 1px solid #2b80fd;
+    border-radius: 6px !important;
+}
+.input-no-border{
+    border: none;
+    border-radius: 6px !important;
+}
+.input-no-border:focus{
+    box-shadow: none;
+}
+.border-radius{
+    border-radius: 6px;
+}

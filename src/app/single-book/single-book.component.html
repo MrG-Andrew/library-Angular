@@ -1,1 +1,45 @@
-<li>{{book.title}}</li>
+<li class="d-flex">
+	<div class=" col-11 customTitle" [class.active]="isButtonActive">{{book.title}}</div>
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button 
+			type="button" 
+			class="btn p-0 m-0 d-flex btn-edit" 
+			(click)="open(content)" 
+			(mouseover)="isButtonActive = true" 
+			(mouseleave)="isButtonActive = false" 
+			(focus)="isButtonActive = true" 
+			(blur)="isButtonActive = false"
+		>
+			<img class="opacity-50 opacity-100-select" width="20px" height="20px" src="../../assets/editing.png"/>
+		</button>
+        <button type="button" class="btn-close " (click)="removeBook()" (mouseover)="isButtonActive = true" (mouseleave)="isButtonActive = false" (focus)="isButtonActive = true" (blur)="isButtonActive = false"></button>
+    </div>
+</li>
+
+<ng-template #content let-modal>
+	<div class="modal-header">
+	  <h4 class="modal-title" id="modal-basic-title">{{book.title}}</h4>
+	  <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+	  <form>
+		<div class="mb-3 d-flex justify-content-between">
+		  <label for="bookTitle" class="col-3">Title</label>
+		  <input type="text" id="bookTitle" class="w-100" [(ngModel)]="bookCopy.title" name="title" required (ngModelChange)="errorMsg = ''">
+		</div>
+		<div class="mb-3 d-flex justify-content-between">
+		  <label for="bookAuthor" class="col-3">Author</label>
+		  <input type="text" id="bookAuthor" class="w-100" [(ngModel)]="bookCopy.author" name="author" required (ngModelChange)="errorMsg = ''">
+		</div>
+		<div class="mb-3 d-flex justify-content-between">
+		  <label for="bookDescription" class="col-3">Description</label>
+		  <textarea type="text" id="bookDescription" class="w-100" [(ngModel)]="bookCopy.description" name="description" required (ngModelChange)="errorMsg = ''"></textarea>
+		</div>
+	  </form>
+	</div>
+	<div class="modal-footer">
+	  <button type="button" class="btn btn-outline-danger " (click)="modal.dismiss('Close click')">Close</button>
+	  <button type="button" class="btn btn-outline-primary " (click)="editBook()">Save</button>
+	</div>
+	<p class="errorMsg" *ngIf="errorMsg.length > 0">{{errorMsg}}</p>
+  </ng-template>

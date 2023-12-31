@@ -1,0 +1,20 @@
+.opacity-100-select:hover,.opacity-100-select:focus{
+    opacity: 1 !important;
+}
+.btn-edit:focus{
+    border-radius: 4px !important;
+    box-shadow: 0 0 0.5px 4px #c2daff !important;
+    & .opacity-100-select{ opacity: 1 !important; }
+}
+.customTitle.active {
+    color: #901f72;
+    font-size: 1.2rem;
+    transition: 0.3s ease-in-out;
+}
+.errorMsg{
+    font-weight: 600 !important;
+    font-size: 14px;
+    color: red;
+    width: 100%;
+    text-align: center;
+}

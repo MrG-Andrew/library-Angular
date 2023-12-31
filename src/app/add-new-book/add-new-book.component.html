@@ -1,3 +1,28 @@
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
-  </button>
+<button class="btn btn-primary" (click)="open(content)">Add New Book</button>
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">New Book</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<form #bookForm="ngForm">
+			<div class="mb-3 d-flex justify-content-between">
+				<label for="bookTitle" class="col-3">Title</label>
+				<input type="text" id="bookTitle" class="w-100" [(ngModel)]="newBook.title" (ngModelChange)="errorMsg=''" name="title" required>
+			</div>
+            <div class="mb-3 d-flex justify-content-between">
+				<label for="bookAuthor" class="col-3">Author</label>
+				<input type="text" id="bookAuthor" class="w-100" [(ngModel)]="newBook.author" (ngModelChange)="errorMsg=''" name="author" required>
+			</div>
+            <div class="mb-3 d-flex justify-content-between">
+				<label for="bookDescription" class="col-3">Description</label>
+				<textarea type="text" id="bookDescription" class="w-100" [(ngModel)]="newBook.description" (ngModelChange)="errorMsg=''" name="description" ></textarea>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger " (click)="modal.dismiss('Close click')">Close</button>
+		<button type="submit" class="btn btn-outline-primary " (click)="addNewBook(bookForm)">Save</button>
+		<p class="errorMsg" *ngIf="errorMsg.length > 0">{{errorMsg}}</p>
+	</div>
+</ng-template>

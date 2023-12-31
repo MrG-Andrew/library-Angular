@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { BookListComponent } from './book-list/book-list.component';
-import { BookModalComponent } from './book-modal/book-modal.component';
 import { AddNewBookComponent } from './add-new-book/add-new-book.component';
 import { EventService } from './shared/models/services/EventService';
 import { Book } from './shared/models/Book';
@@ -17,7 +16,6 @@ import { Book } from './shared/models/Book';
     RouterOutlet,
     SearchBarComponent,
     BookListComponent,
-    BookModalComponent,
     AddNewBookComponent,
   ],
   templateUrl: './app.component.html',
@@ -25,12 +23,28 @@ import { Book } from './shared/models/Book';
 })
 export class AppComponent {
   books!: Book[];
+  search: any;
 
-  constructor(events: EventService, private bookService: BookService) {}
+  constructor(events: EventService, private bookService: BookService) {
+    events.listen('removeBook', (book) => {
+      let bookIndex = this.books.indexOf(book);
+      this.books.splice(bookIndex, 1);
+    });
+  }
 
   ngOnInit() {
     this.bookService.getBooks().subscribe((books: Book[]) => {
       this.books = books;
     });
+  }
+
+  filteredBooks() {
+    if (this.search) {
+      return this.books.filter((book) => {
+        return book.title.toLowerCase().includes(this.search.toLowerCase());
+      });
+    } else {
+      return this.books;
+    }
   }
 }

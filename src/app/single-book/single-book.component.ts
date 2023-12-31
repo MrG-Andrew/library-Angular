@@ -48,6 +48,7 @@ export class SingleBookComponent {
     ) {
       this.modalService.dismissAll();
       this.bookEdited.emit(this.bookCopy);
+      this.book = this.bookCopy;
       this.errorMsg = '';
     } else {
       this.errorMsg = 'All fields are required!';

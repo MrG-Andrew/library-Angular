@@ -1,5 +1,5 @@
-<div class="bg-white " *ngIf="books.length === 0; else showItems">
-    No Books Found.
+<div class="px-5 py-4 bg-white rounded-3 font-lg" *ngIf="books.length === 0; else showItems">
+    No Books Found...
 </div>
 <ng-template #showItems>
   <ul class="book-list px-5 py-4 bg-white rounded-3">
